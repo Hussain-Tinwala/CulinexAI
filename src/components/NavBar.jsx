@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { NavLink } from 'react-router-dom'
+import { GlobalContext } from '../context/context'
 
 export default function NavBar() {
+  const {searchParam, setSearchParam}= useContext(GlobalContext)
+  function handleInput(event)
+  {
+    setSearchParam(event.target.value)
+  }
+  console.log(searchParam)
+
   return (
     <nav className='flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0'>
       <h2 className='text-2xl font-semibold'>
@@ -13,6 +21,8 @@ export default function NavBar() {
       <form action="">
         <input type="text"
           name='search'
+          value={searchParam}
+          onChange={handleInput}
           placeholder='Enter Items...'
           className='bg-white/75 p-3 px-8 rounded-full outline-none lg:w-96 shadow-lg shadow-red-100 focus:shadow-red-200'
         />
