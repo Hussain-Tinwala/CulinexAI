@@ -37,7 +37,25 @@ export default function Details() {
       <div className='flex flex-col gap-3'>
       <span className="text-sm text-cyan-700 font-medium">{recipeDetailsData?.recipe?.publisher}</span>
       <h3 className="font-bold truncate text-black">{recipeDetailsData?.recipe?.title}</h3>
-      
+      <div>
+        <button
+          className='p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white'
+        >
+          Save as Favourites
+          
+        </button>
+      </div>
+      <div className='border-2'>
+        <span className='text-2xl font-bold text-black'>Ingredients</span>
+        <ul className='flex flex-col gap-3'>
+          {recipeDetailsData?.recipe?.ingredients.map((item)=>
+          <li>
+              <span className='text-1xl font-semibold text-black'>{item.quantity} {item.unit}</span>
+              <span className='text-1xl font-semibold text-black'>{item.description}</span>
+
+          </li>)}
+        </ul>
+      </div>
 
       </div>
 
