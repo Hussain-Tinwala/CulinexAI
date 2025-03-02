@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { GlobalContext } from '../context/context'
 
 export default function NavBar() {
-  const {searchParam, setSearchParam}= useContext(GlobalContext)
+  const {searchParam, setSearchParam, handleSubmit}= useContext(GlobalContext)
   function handleInput(event)
   {
     setSearchParam(event.target.value)
@@ -18,7 +18,7 @@ export default function NavBar() {
           <NavLink to={'/'} className="text-black hover:text-gray-700 duration-300">FoodRecipe</NavLink>
         
       </h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input type="text"
           name='search'
           value={searchParam}
