@@ -27,11 +27,11 @@ export default function NavBar() {
           className='bg-white/75 p-3 px-8 rounded-full outline-none lg:w-96 shadow-lg shadow-red-100 focus:shadow-red-200'
         />
       </form>
-      <ul>
-        <li>
+      <ul className='flex'>
+        <li className='m-3'>
           <NavLink to={'/'} className="text-black hover:text-gray-700 duration-300">Home</NavLink>
         </li>
-        <li>
+        <li className='m-3'>
           <NavLink to={'/favourites'} className="text-black hover:text-gray-700 duration-300">Favourites</NavLink>
         </li>
       </ul>
