@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RecipeSection from './RecipeSection'
 import IngredientsSection from './IngredientsSection'
+import axios from 'axios'
 
 function AI() {
     const [ingredients, setIngredients] = useState([])
@@ -10,17 +11,34 @@ function AI() {
         )
     })
 
-    const [recipeShown, setRecipeShown]= useState(false)
+    const [recipe, setRecipe]= useState(null)
+    const [recipeShown, setRecipeShown] = useState(false)
 
-    function getRecipe(){
-        setRecipeShown(prev=>!prev)
+    function getRecipe() {
+    // async function getRecipe() {
+        setRecipeShown(prev => !prev)
+    //     try {
+    //         const ingredient = ingredients[0]
+    //         console.log(ingredient)
+    //         const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+
+    //         if (response.data.meals) {
+    //             setRecipe(response.data.meals[0])
+    //         } else {
+    //             alert("No recipe found for your ingredients!")
+    //             setRecipeShown(false)
+    //         }
+
+    //     } catch (e) {
+    //         console.error("Error Fetching data", error)
+    //         setRecipeShown(false)
+    //     }
     }
 
-    const recipeSection= React.useRef(null)
-    useEffect(()=>{
-        if(recipeShown!==""&& recipeSection.current!==null)
-        {
-            recipeSection.current.scrollIntoView({behavior:"smooth"})
+    const recipeSection = React.useRef(null)
+    useEffect(() => {
+        if (recipeShown !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({ behavior: "smooth" })
         }
 
     }, [recipeShown])
@@ -49,18 +67,18 @@ function AI() {
                     </span>
                 </button>
             </form>
-            {ingredients.length>0 && 
-                <IngredientsSection 
-                ingredients={ingredients} 
-                ingredientsElements={ingredientsElements} 
-                getRecipe={getRecipe} 
-                recipeShown={recipeShown} 
-                recipeSection={recipeSection}
+            {ingredients.length > 0 &&
+                <IngredientsSection
+                    ingredients={ingredients}
+                    ingredientsElements={ingredientsElements}
+                    getRecipe={getRecipe}
+                    recipeShown={recipeShown}
+                    recipeSection={recipeSection}
 
                 />
             }
-            { recipeShown &&
-                <RecipeSection />
+            {recipeShown &&
+                <RecipeSection recipe={recipe}/>
             }
         </main>
     )
