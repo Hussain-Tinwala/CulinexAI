@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import Favourites from './pages/Favourites'
 import Details from './pages/Details'
+import RecipeAI from './pages/RecipeAI'
 
 function App() {
 
@@ -28,6 +29,10 @@ function App() {
           <Route 
             path='/recipe-item/:id'
             element={ <Details/>}
+          />
+          <Route 
+            path='/recipeAI'
+            element={ <RecipeAI/>}
           />
         </Routes>
       </div>
