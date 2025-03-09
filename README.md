@@ -1,12 +1,31 @@
-# React + Vite
+# CulinexAI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application built using React and Vite. This app allows users to explore and interact with various recipes, save their favorites, and even generate new recipe ideas through an AI-powered feature.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home Page**: View a list of recipes.
+- **Favourites Page**: Save and view your favorite recipes.
+- **Recipe Details**: View detailed information about a specific recipe.
+- **Recipe AI**: Generate new recipe ideas using an AI-powered feature.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: Next-generation build tool that focuses on speed and performance.
+- **React Router**: For routing and navigation between pages.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+
+## Project Structure
+
+- `src/assets/`: Contains assets like images and icons (e.g., React and Vite logos).
+- `src/components/`: Contains reusable components, such as the `NavBar`.
+- `src/pages/`: Contains the main page components, including `Home`, `Favourites`, `Details`, and `RecipeAI`.
+- `src/App.css`: Global styles for the app.
+
+## Usage
+
+- **Home Page**: Browse through a list of recipes.
+- **Favourites Page**: Save and manage your favorite recipes.
+- **Recipe Details**: View detailed information about each recipe by clicking on a recipe item.
+- **Recipe AI**: Use the AI-powered tool to generate recipe ideas based on your preferences.
